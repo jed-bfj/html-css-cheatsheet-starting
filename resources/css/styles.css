@@ -1,0 +1,150 @@
+* {
+    background-color: black;
+    color: white;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-top: 50px; /* Remove default padding */
+}
+
+nav {
+    
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.navlinks {
+    background-image: url('../images/matrix_images.jpeg');
+    margin: 0;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+}
+
+.navlinks ul{
+    margin: 10px;
+    padding: 10px;
+}
+
+.navlinks li {
+    padding: 10px;
+    border: solid white 1px;
+    border-radius: 5px;
+}
+.navlinks li:not(:last-child) {
+    margin-right: 20px; /* Add margin between li elements */
+}
+
+h1 {
+    width: 100%;
+    text-align:center;
+}
+
+.intro p {
+    text-align: left;
+    border-bottom: 1px solid white;
+    padding: 20px 40px;
+    width: 70%;
+}
+
+.content {
+    padding: 40px;
+}
+.content-block {
+    border-bottom: dotted white 1px;
+    width: 70%;
+    padding-bottom: 10px;
+}
+
+.content-block h2, h3{
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.content-block ol {
+    padding-left: 40px;
+}
+
+.content-block .content-meat {
+    padding-left: 20px;
+    line-height: 1.5;
+}
+
+
+.code-block {
+    padding: 20px 20px;
+    display:block;
+    color:red;
+    font-family:'Courier New', monospace;
+    line-height: 1.5;
+}
+.code-block .indent {
+    padding:0;
+    margin:0;
+    padding-left: 20px;
+    color:inherit;
+}
+
+.code-block .double-indent {
+    padding-left: 40px;
+    color:inherit;
+}
+
+.code-block .triple-indent {
+    padding-left: 60px;
+    color:inherit;
+}
+
+.html {
+    font-style:bold;
+    color:red;
+}
+
+.attr{
+    font-style:italic;
+    color:green;
+}
+
+.examples {
+    margin: 20px auto;
+    padding: 20px 20px;
+    display: flex; /* Using flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: #2b2d42;
+    width: 60%;
+}
+
+.examples .examples-child {
+    background-color: inherit;
+    margin: 10px;
+    padding: 10px;
+    text-align: center; /* Center text content */
+}
+
+.table-format {
+    width: 60%;
+    border-collapse: collapse;
+    text-align: center;
+    display: block; /* Override display: flex */
+    justify-content: unset; /* Reset justify-content */
+    align-items: unset; /* Reset align-items */
+}
+
+.table-format th, .table-format td {
+    border: 1px solid white;
+    padding: 8px;
+    color: white;
+}
+
+.table-format thead {
+    background-color: #2b2d42;
+}

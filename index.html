@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="resources/css/styles.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:wght@100&family=Space+Mono&display=swap" rel="stylesheet">
+        <title>Joey's HTML and CSS Learnings</title>
+    </head>
+
+    <body>
+        <nav>
+            <ul class= "navlinks">
+                <li><a href='#html-basics-start'>HTML Basics</a></li>
+                <li><a href='#deploying-websites-start'>Deploying Websites</a></li>
+                <li><a href='#css-basics-start'>CSS Basics</a></li>
+                <li><a href='#javascript-fundamentals-start'>Javascript Basics</a></li>
+            </ul>
+        </nav>
+        <div class="intro">
+            <h1>A Summary of Lessons</h1>
+            <p>Throughout this course, I've learned the basic of static web development - primarily focused on HTML and CSS.
+                In this guide, I'll go through some of the primary learnings and key things to remember from what I've learned.
+            </p>
+        </div>
+        <div class="content">
+            <div class = 'content-block' id="html-basics">
+                <h2 id="html-basics-start">HTML Basics</h2>
+                <p>Below, I'll outline some of the key learnings in HTML training that I don't want to forget</p>
+                <ol>
+                    <li><a href='#doctype-declaration'>Doctype Declaration</a></li>
+                    <li><a href='#general-structure'>General Structure</a></li>
+                    <li><a href='#attributes-classes-ids'>Attributes, Classes, ID's</a></li>
+                    <li><a href='#links-anchors'>Links & Anchors</a></li>
+                    <li><a href='#images-videos'>Images & Videos</a></li>
+                    <li><a href='#tables'>Tables</a></li>
+                    <li><a href='#semantic-non'>Semantic vs Non-semantic</a></li>
+                </ol>
+                <h3 class="individual-learnings" id='doctype-declaration'>1. Doctype Declaration</h3>
+                <div class="content-meat">
+                    <p>Pretty straightforward actually - you need to declare: 
+                        <div class='code-block'>
+                            &lt;&excl;DOCTYPE html&sol;&gt;<br>
+                            ...<br>
+                            &lt;&sol;html&gt;
+                        </div>
+                    at the beginning of your html file.</p>
+                </div>
+                <h3 class="individual-learnings" id='general-structure'>2. General Structure</h3>
+                <div class="content-meat">
+                    <p>Within html brackets, establish a <span class="html">head</span>, <span class="html">body</span>, and <span class="html">footer</span>. 
+                        <div class='code-block'>
+                            &lt;head&gt;<br>
+                            <p class='indent'>...</p>
+                            &lt;&sol;head&gt; <br>
+                            &lt;body&gt;<br>
+                            <p class='indent'>...</p>
+                            &lt;&sol;body&gt; <br>
+                            &lt;footer&gt;<br>
+                            <p class='indent'>...</p>
+                            &lt;&sol;footer&gt;
+                        </div>
+                        <span class="html">head</span> is where you place link tags, to bring in javascript and css files (or other dependencies like SDKs)<br>
+                        <span class="html">body</span> is where you place the meat of the content <br>
+                        <span class="html">footer</span> is self explanatory
+                    </p>
+                </div>
+                <h3 class="individual-learnings" id='attributes-classes-ids'>3. Attributes, Classes, ID's</h3>
+                <div class="content-meat">
+                    <p>Each html element can be assigned attributres, which modifies or extends their behavior:</p>
+                    <div class='code-block'>
+                        &lt;link href="css/style.css" rel="stylesheet"&gt;<br>
+                        &lt;div id='this-is-an-id&gt;&lt;&sol;div&gt;<br>
+                        &lt;p class='content'&gt;&lt;&sol;p&gt;<br>
+                        &lt;p style='color: blue; font-size: 16px;'&gt;&lt;&sol;p&gt;<br>
+                    </div>
+                    <span class="attr">class</span> allow you to group similar components for easy and modular modifications (CSS, javascript) <br>
+                    <span class="attr">id</span> is more specific and target individual elements <br>
+                    CSS styles can be added inline, though it's best practice to have a separate css file (more on that later)
+                </div>
+                <h3 class="individual-learnings" id='links-anchors'>4. Links & Anchors</h3>
+                <div class="content-meat">
+                    <p>
+                    <span class="html">link</span> and anchor <span class="html">a</span> tags are different. <br>
+                    <span class="html">link</span> tags are primarily used in the <span class="html">head</span> section and link to external resources, like stylesheets and icons and fonts:
+                    <div class='code-block'>
+                        &lt;link href="css/style.css" rel="stylesheet"&gt;<br>
+                    </div>
+                    <span class="attr">rel</span> defines the relationship between current document and linked resource, <span class="attr">href</span> specifies url of linked soure <br>
+                    anchor <span class="html">a</span> tags are used to create hyperlinks that navigate users elsewhere, externally or on the same page:
+                    <div class='code-block'>
+                        &lt;a href="https://www.theringer.com"&gt;<br>
+                        &lt;&sol;a&gt;
+                    </div>
+                    <a href="https://www.theringer.com" class="examples">Click this link to go to theringer.com</a><br>
+                    Unlike <span class="html">link</span> tags, anchor <span class="html">a</span> tags must be closed (they are not self-closing)<br>
+                    <span class="attr">href</span> defines the url path for the linked resource<br>
+                    The <span class="attr">target</span> attribute, set to '_blank' will open a new tab vs linking the current one
+                    </p>
+                </div>
+                <h3 class="individual-learnings" id='images-videos'>5. Images & Videos</h3>
+                <div class="content-meat">
+                    <p>Images and videos can be added like so:
+                    <div class='code-block'>
+                        &lt;img src="image.jpg" alt="Description of Image&gt;<br>
+                        &lt;video controls width='400' height='300'&gt;<br>
+                        <p class='indent'>&lt;source src='video.mp4' type='video.mp4'&gt;</p>
+                        <p class='double-indent'>Your browser does not support the video tag.</p>
+                        <p class='indent'>&lt;&sol;source&gt;</p>
+                        &lt;&sol;video&gt;
+                    </div>
+                    <div class="examples">
+                        <figure class="examples-child">
+                            <img src="resources/images/oldgreg.jpeg" alt="Old Gregg Image">
+                            <figcaption>I'M OLD GREGG</figcaption>
+                        </figure>
+                    </div>
+                    <span class="html">image</span> is a self-closing tag, <span class="html">video</span> is not <br>
+                    <span class="html">video</span> requires a source tag to indicate src and file type <br>
+                    <span class="attr">src</span> is the url or filepath for both <br>
+                    <span class="attr">alt</span> provides alternative text to display when image cannot be; video will display the text between the tags <br>
+                    <span class='attr'>controls</span> displays video controls like pause, play etc<br>
+                    <span class='attr'>width </span>and <span class='attr'>height </span> set dimensions
+                    </p>
+                </div>
+                <h3 class="individual-learnings" id='tables'>6. Tables</h3>
+                <div class="content-meat">
+                    <p>
+                    Tables can be a bitch, especially to style and format correctly, so I'll just outline the core code and explain:
+                    <div class='code-block'>
+                        &lt;table&gt;<br>
+                        <p class='indent'>&lt;thead&gt;</p>
+                        <p class='double-indent'>&lt;tr&gt;<br></p>
+                        <p class='triple-indent'>&lt;th scope='col'&gt;Company Name&lt;&sol;th&gt;</p>
+                        <p class='triple-indent'>&lt;th scope='col'&gt;Number of Items to Ship&lt;&sol;th&gt;</p>
+                        <p class='triple-indent'>&lt;th scope='col'&gt;Next Action&lt;&sol;th&gt;</p>
+                        <p class='double-indent'>&lt;&sol;tr&gt;</p>
+                        <p class='indent'>&lt;&sol;thead&gt;</p>
+                        <p class='indent'>&lt;tbody&gt;<br></p>
+                        <p class='double-indent'>&lt;tr&gt;</p>
+                        <p class='triple-indent'>&lt;td&gt;Joey's cool company&lt;&sol;td&gt;</p>
+                        <p class='triple-indent'> &lt;td&gt;69&lt;&sol;td&gt;</p>
+                        <p class='triple-indent'> &lt;td&gt;Baileys&lt;&sol;td&gt;</p>
+                        <p class='double-indent'>&lt;&sol;tr&gt;</p>
+                        <p class='indent'>...</p>
+                        <p class='indent'>&lt;&sol;tbody&gt;</p>
+                        <p class='indent'>&lt;tfoot&gt;</p>
+                        <p class='double-indent'> &lt;tr&gt;</p>
+                        <p class='triple-indent'>&lt;td&gt;Total&lt;&sol;td&gt;</p>
+                        <p class='triple-indent'>&lt;td&gt;420&lt;&sol;td&gt;</p>
+                        <p class='double-indent'> &lt;&sol;tr&gt;</p>
+                        <p class='indent'>&lt;&sol;tfoot&gt;</p>
+                        &lt;&sol;table&gt;<br>
+                    </div>
+                    <table class="examples table-format table-center">
+                        <thead>
+                        <tr>
+                        <th scope='col'>Company Name</th>
+                        <th scope='col'>Number of Items to Ship</th>
+                        <th scope='col'>Next Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                        <td>Adam's Greenworks</td>
+                        <td>14</td>
+                        <td>Package Items</td>
+                        </tr>
+                        <tr>
+                        <td>Davie's Burgers</td>
+                        <td>2</td>
+                        <td>Send Invoice</td>
+                    </tr>
+                    <tr>
+                        <td>Baker's Bike Shop</td>
+                        <td>3</td>
+                        <td>Send Invoice</td>
+                    </tr>
+                    <tr>
+                        <td>Miss Sally's Southern</td>
+                        <td>4</td>
+                        <td>Ship</td>
+                    </tr>
+                    <tr>
+                        <td>Summit Resort Rentals</td>
+                        <td>4</td>
+                        <td>Ship</td>
+                    </tr>
+                    <tr>
+                        <td>Strike Fitness</td>
+                        <td>1</td>
+                        <td>Enter Order</td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                        <td>Total</td>
+                        <td>28</td>
+                        <td></td>
+                        </tr>
+                    </tfoot>
+                    </table>
+                    The <span class="html">table</span> element creates a table. <br>
+                    The <span class="html">tr</span> element adds rows to a table. <br>
+                    To add data to a row, you can use the <span class="html">td</span> element. <br>
+                    Table headings clarify the meaning of data. Headings are added with the <span class="html">th</span>element. <br>
+                    Table data can span columns using the <span class="attr">colspan</span> attribute. <br>
+                    Table data can span rows using the <span class="attr">rowspan</span> attribute. <br>
+                    Tables can be split into three main sections: a head, a body, and a footer. <br>
+                    A table’s head is created with the <span class="html">thead</span> element. <br>
+                    A table’s body is created with the <span class="html">tbody</span> element. <br>
+                    All the CSS properties you learned about in this course can be applied to tables and their data. <br>
+                    A table’s footer is created with the <span class="html">tfoot</span> element.
+                    </p>
+                </div>
+                <h3 class="individual-learnings" id='semantic-non'>7. Semantic vs Non-semantic</h3>
+    
+            </div>
+            <div class = 'content-block' id="deploying-websites">
+                <h2 id='deploying-websites-start'>Deploying Websites</h2>
+                <p>Deploying a webiste is pretty straightforward, once you understand git, file structures and hosting</p>
+                <ol>
+                    <li><a href='#directory-file-structures'>Directory & File Structures</a></li>
+                    <li><a href='#key-unix-commands'>Key Unix Commands</a></li>
+                    <li><a href='#git'>Git</a></li>
+                    <li><a href='#hosting-local'>Hosting - Local</a></li>
+                    <li><a href='#hosting-web'>Hosting - Web/Prod Deployment</a></li>
+                </ol>
+                <h3 class="individual-learnings" id='directory-file-structures'>1. Directory & File Structures</h3>
+                <h3 class="individual-learnings" id='key-unix-commands'>2. Key Unix Commands</h3>
+                <h3 class="individual-learnings" id='git'>3. Git</h3>
+                <h3 class="individual-learnings" id='hosting-local'>4. Hosting - Local</h3>
+                <h3 class="individual-learnings" id='hosting-web'>5. Hosting - Web/Prod Deployment</h3>
+            </div>
+            <div class = 'content-block' id="css-basics">
+                <h2 id='css-basics-start'>CSS Basics</h2>
+                <p>CSS basics are pretty straightforward once you get the hang of them, but the advanced topics can get tricky fast</p>
+                <ol>
+                    <li><a href='#selectors-visual-rules'>Selectors & Visual Rules</a></li>
+                    <li><a href='#box-model'>The Box Model</a></li>
+                    <li><a href='#changing-box-model'>Changing the Box Model</a></li>
+                    <li><a href='#display-positioning'>Display & Positioning</a></li>
+                    <li><a href='#improved-styling'>Improved Styling</a></li>
+                    <li><a href='#responsive-design-layout'>Responsive Design & Layout</a></li>
+                </ol>
+                <h3 class="individual-learnings" id='selectors-visual-rules'>1. Selectors & Visual Rules</h3>
+                <h3 class="individual-learnings" id='box-model'>2. The Box Model</h3>
+                <h3 class="individual-learnings" id='changing-box-model'>3. Changing the Box Model</h3>
+                <h3 class="individual-learnings" id='display-positioning'>4. Display & Positioning</h3>
+                <h3 class="individual-learnings" id='improved-styling'>5. Improved Styling</h3>
+                <h3 class="individual-learnings" id='responsive-design-layout'>6. Responsive Design & Layout</h3>
+            </div>
+            <div class = 'content-block' id="javascript-fundamentals">
+                <h2 id='javascript-fundamentals-start'>Javascript Fundamentals</h2>
+                <p>Coming Soon!</p>
+                <ol>
+                    <li><a href=''>Coming Soon</a></li>
+                    <li><a href=''>Coming Soon</a></li>
+                    <li><a href=''>Coming Soon</a></li>
+                    <li><a href=''>Coming Soon</a></li>
+                    <li><a href=''>Coming Soon</a></li>
+                </ol>
+            </div>
+        </div>
+    </body>
+
+    <footer>
+
+
+    </footer>
+
+</html>
